@@ -21,8 +21,8 @@ fi
 read -rp "License Name: " license_name
 
 export \
-    PROJECT_OWNER="$project_owner" \
-    PROJECT_NAME="$project_name" \
+    PROJECT_OWNER="$(echo "$project_owner" | tr "[:upper:]" "[:lower:]")" \
+    PROJECT_NAME="$(echo "$project_name" | tr "[:upper:]" "[:lower:]")" \
     GIT_URL="$git_url" \
     LICENSE_NAME="$license_name"
 
