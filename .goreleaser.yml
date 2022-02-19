@@ -27,7 +27,7 @@ dockers:
     image_templates:
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:latest-amd64"
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:{{ .Version }}-amd64"
-    use_buildx: true
+    use: buildx
     dockerfile: Dockerfile
     build_flag_templates:
       - "--pull"
@@ -43,7 +43,7 @@ dockers:
     image_templates:
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:latest-arm64v8"
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:{{ .Version }}-arm64v8"
-    use_buildx: true
+    use: buildx
     dockerfile: Dockerfile
     goarch: arm64
     build_flag_templates:
@@ -60,7 +60,7 @@ dockers:
     image_templates:
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:latest-armv7"
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:{{ .Version }}-armv7"
-    use_buildx: true
+    use: buildx
     dockerfile: Dockerfile
     goarch: arm
     goarm: "7"
