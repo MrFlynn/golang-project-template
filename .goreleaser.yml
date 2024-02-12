@@ -62,11 +62,10 @@ docker_manifests:
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:latest-amd64"
       - "ghcr.io/${PROJECT_OWNER}/{{ .ProjectName }}:latest-arm64v8"
 checksum:
-  name_template: SHASUMS.txt
+  name_template: SHA256SUMS
 snapshot:
   name_template: "{{ .ShortCommit }}-rc"
 changelog:
-  sort: asc
   filters:
     exclude:
       - "^conf:"
