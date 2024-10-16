@@ -1,4 +1,5 @@
 project_name: ${PROJECT_NAME}
+version: 2
 before:
   hooks:
     - go mod download
@@ -64,7 +65,7 @@ docker_manifests:
 checksum:
   name_template: SHA256SUMS
 snapshot:
-  name_template: "{{ .ShortCommit }}-rc"
+  version_template: "{{ .ShortCommit }}-rc"
 changelog:
   filters:
     exclude:
