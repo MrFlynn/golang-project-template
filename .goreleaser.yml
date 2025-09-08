@@ -4,7 +4,7 @@ before:
   hooks:
     - go mod download
 builds:
-  - id: "default"
+  - id: default
     env:
       - CGO_ENABLED=0
     binary: "{{ .ProjectName }}"
@@ -16,8 +16,8 @@ builds:
       - amd64
       - arm64
 archives:
-  - builds:
-      - "default"
+  - ids:
+      - default
     wrap_in_directory: "true"
 dockers:
   - ids:
